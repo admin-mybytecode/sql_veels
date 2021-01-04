@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
-class PartnerBusinessesSeeder extends Seeder
+class PartnerBusinessSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,8 +15,7 @@ class PartnerBusinessesSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
         for ($i = 0; $i <= 100; $i++) :
-
-            DB::table('partner_businesses')
+            DB::table('partner_business')
                 ->insert([
                     'business_name' => $faker->name,
                     'address' => $faker->address,
