@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class CustomerUsersSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -13,14 +13,14 @@ class DatabaseSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
-        for($i=0; $i<=100; $i++):
-            DB::table('partner_users')
+        for ($i = 0; $i <= 100; $i++) :
+            DB::table('customer_users')
                 ->insert([
                     'fullname' => $faker->name,
                     'email_id' => $faker->email,
                     'phone_number' => $faker->phoneNumber,
                     'password' => $faker->password,
-                    'added_by' => $faker->phoneNumber, 
+                    'added_by' => $faker->phoneNumber,
                     'pan_number' => $faker->bankAccountNumber,
                     'aadhar_number' => $faker->bankAccountNumber
                 ]);
