@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CustomerBusinessUsersMappingSeeder extends Seeder
+class PartnerBusinessUsersMappingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +15,10 @@ class CustomerBusinessUsersMappingSeeder extends Seeder
         $faker = \Faker\Factory::create();
         for ($i = 0; $i <= 100; $i++) :
 
-            DB::table('customer_business_users_mapping')
+            DB::table('partner_business_users_mapping')
                 ->insert([
-                    'customer_business_id' => rand(1, 99),
-                    'customer_user_id' => rand(1, 99),
+                    'partner_business_id' => rand(1, 99),
+                    'partner_user_id' => rand(1, 99),
                     'role' => $faker->randomElement(['operator', 'admin', 'manager']),
                     'added_by' => rand(1, 99),
                     'role_updated_on' => $faker->dateTime($max = 'now', $timezone = null),
