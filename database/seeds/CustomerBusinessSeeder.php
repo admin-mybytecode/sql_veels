@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PartnerBusinessesSeeder extends Seeder
+class CustomerBusinessSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class PartnerBusinessesSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create();
-        DB::table('partner_businesses')
+        DB::table('customer_business')
             ->insert([
                 'business_name' => $faker->name,
                 'address' => $faker->address,
@@ -23,19 +23,16 @@ class PartnerBusinessesSeeder extends Seeder
                 'pin_code' => $faker->countryISOAlpha3,
                 'geo_lat' => $faker->latitude,
                 'geo_long' => $faker->longitude,
-                'geo_location' => $faker->secondaryAddress,
-                'partner_user_id' => rand(1, 10),
-                'highway' => $faker->boolean(),
-                'highway_type' => $faker->name,
-                'highway_number' => 1,
-                'partner_gst_number' => $faker->md5,
-                'partner_pan_number' => $faker->md5,
-                'partner_image_gst' => $faker->imageUrl($width = 640, $height = 480),
-                'p_image_oil_co_receipt' => $faker->md5,
-                'p_image_business_logo' => $faker->imageUrl($width = 640, $height = 480),
-                'status' => $faker->randomElement(['deleted', 'enabled', 'disabled']),
+                'partner_user_id' => $faker->rand(1, 10),
+                'partner_business_id' => $faker->rand(1, 10),
+                'customer_gst_number' => $faker->md5,
+                'customer_pan_number' => $faker->md5,
+                'customer_image_gst' => $faker->$faker->imageUrl($width = 640, $height = 480),
+                'customer_image_business_logo' => $faker->$faker->imageUrl($width = 640, $height = 480),
+                'status' => $faker->randomElement(['operator', 'admin', 'manager']),
                 'status_updated_by' => $faker->dateTime($max = 'now', $timezone = null),
                 'status_updated_on' => $faker->dateTime($max = 'now', $timezone = null),
+                'geo_location' => $faker->secondaryAddress,
             ]);
     }
 }
