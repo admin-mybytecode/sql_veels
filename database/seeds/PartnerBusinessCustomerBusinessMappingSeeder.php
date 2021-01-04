@@ -24,10 +24,10 @@ class PartnerBusinessCustomerBusinessMappingSeeder extends Seeder
                     'edit_updated_on' => $faker->dateTime($max = 'now', $timezone = null),
                     'edit_updated_by' => rand(1, 99),
                     'credit_limit_assigned' => rand(1, 99),
-                    'credit_limit_addded_edited_on' => rand(1, 99),
+                    'credit_limit_addded_edited_on' => $faker->dateTime($max = 'now', $timezone = null),
                     'credit_limit_assigned_by' => rand(1, 99),
                     'status_updated_on' => $faker->dateTime($max = 'now', $timezone = null),
-                    'status_updated_by' => rand(1, 99),
+                    'status_updated_by' => $faker->dateTime($max = 'now', $timezone = null),
                 ]);
         endfor;
     }

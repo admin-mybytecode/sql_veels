@@ -16,7 +16,7 @@ class CustomerUsersSeeder extends Seeder
         for ($i = 0; $i <= 100; $i++) :
             DB::table('customer_users')
                 ->insert([
-                    'fullname' => $faker->name,
+                    'full_name' => $faker->name,
                     'email_id' => $faker->email,
                     'phone_number' => $faker->phoneNumber,
                     'password' => $faker->password,

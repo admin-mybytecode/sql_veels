@@ -24,12 +24,12 @@ class PartnerBusinessCustomerBusinessCreditTransactionsSeeder extends Seeder
                     'transaction_date' => $faker->dateTime($max = 'now', $timezone = null),
                     'p_ref_number1' => $faker->bankAccountNumber,
                     'c_ref_number2' => $faker->bankAccountNumber,
-                    'vehicle_number' => $faker->jpjNumberPlate,
+                    'vehicle_number' => $faker->randomElement(['MH',"NH"]).rand(20,90),
                     'product' => rand(1, 99),
                     'product_rsp' => rand(1, 99),
                     'product_quantity' => rand(1, 99),
                     'product_amount' => rand(1, 99),
-                    'discount_given' => rand(1, 99),
+                    'discount_given' => $faker->boolean(),
                     'discount_amount' => rand(1, 99),
                 ]);
         endfor;
